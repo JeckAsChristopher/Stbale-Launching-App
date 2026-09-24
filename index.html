@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coming Soon</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0f12;
+            color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            text-align: center;
+            padding: 60px 35px;
+            border: 1px solid #252a30;
+            border-radius: 18px;
+            background: #121519;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .label {
+            display: inline-block;
+            margin-bottom: 22px;
+            padding: 7px 14px;
+            border: 1px solid #30363d;
+            border-radius: 999px;
+            color: #aeb6bf;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(42px, 8vw, 72px);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .description {
+            max-width: 500px;
+            margin: 0 auto 38px;
+            color: #9da5ae;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .launch {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .date {
+            font-size: clamp(28px, 6vw, 46px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 35px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .time {
+            min-width: 90px;
+            padding: 15px 12px;
+            border-radius: 10px;
+            background: #191d22;
+            border: 1px solid #292f36;
+        }
+
+        .time strong {
+            display: block;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .time span {
+            color: #777f88;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            color: #656d76;
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                padding: 45px 22px;
+            }
+
+            .time {
+                min-width: 75px;
+            }
+
+            .description {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="label">Something new is coming</div>
+
+        <h1>Coming Soon</h1>
+
+        <p class="description">
+            We're working behind the scenes to bring you something new.
+            Stay tuned for the official launch.
+        </p>
+
+        <div class="launch">We're launching on</div>
+
+        <div class="date">October 15th, 2026</div>
+
+        <div class="countdown">
+            <div class="time">
+                <strong id="days">0</strong>
+                <span>Days</span>
+            </div>
+
+            <div class="time">
+                <strong id="hours">0</strong>
+                <span>Hours</span>
+            </div>
+
+            <div class="time">
+                <strong id="minutes">0</strong>
+                <span>Minutes</span>
+            </div>
+
+            <div class="time">
+                <strong id="seconds">0</strong>
+                <span>Seconds</span>
+            </div>
+        </div>
+
+        <p class="footer">
+            Mark your calendar. We'll see you on launch day.
+        </p>
+    </main>
+
+    <script>
+        const launchDate = new Date("October 15, 2026 00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = launchDate - now;
+
+            if (difference <= 0) {
+                document.querySelector(".countdown").innerHTML =
+                    "<strong style='font-size: 20px;'>We're live!</strong>";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (difference % (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+            const minutes = Math.floor(
+                (difference % (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+            const seconds = Math.floor(
+                (difference % (1000 * 60)) /
+                1000
+            );
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+  </html>
