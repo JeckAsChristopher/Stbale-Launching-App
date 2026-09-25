@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Coming Soon</title>
+    <title>Stbale — Coming Soon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg: #0c0e11;
+            --panel: #13161b;
+            --border: #242a31;
+            --border-soft: #1b2026;
+            --text: #f4f5f6;
+            --muted: #939aa3;
+            --muted-dim: #6b7279;
+            --accent: #35c48d;
+            --accent-dim: rgba(53, 196, 141, 0.14);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,105 +35,202 @@
             align-items: center;
             justify-content: center;
             padding: 24px;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0d0f12;
-            color: #f5f5f5;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(ellipse 900px 500px at 50% -10%, var(--accent-dim), transparent 60%),
+                var(--bg);
+            color: var(--text);
         }
 
         .container {
             width: 100%;
-            max-width: 720px;
+            max-width: 640px;
             text-align: center;
-            padding: 60px 35px;
-            border: 1px solid #252a30;
-            border-radius: 18px;
-            background: #121519;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            padding: 52px 38px 44px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--panel);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
         }
 
-        .label {
-            display: inline-block;
-            margin-bottom: 22px;
-            padding: 7px 14px;
-            border: 1px solid #30363d;
-            border-radius: 999px;
-            color: #aeb6bf;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 34px;
         }
 
-        h1 {
-            font-size: clamp(42px, 8vw, 72px);
-            line-height: 1;
-            letter-spacing: -2px;
-            margin-bottom: 18px;
+        .brand-mark {
+            width: 9px;
+            height: 9px;
+            border-radius: 3px;
+            background: var(--accent);
+        }
+
+        .brand h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: var(--text);
+        }
+
+        .eyebrow {
+            color: var(--muted-dim);
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        h2.headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(38px, 7vw, 60px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
         }
 
         .description {
-            max-width: 500px;
-            margin: 0 auto 38px;
-            color: #9da5ae;
-            font-size: 17px;
-            line-height: 1.6;
+            max-width: 440px;
+            margin: 0 auto 36px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.65;
         }
 
         .launch {
-            color: #ffffff;
-            font-size: 20px;
+            color: var(--muted);
+            font-size: 15px;
             font-weight: 500;
-            margin-bottom: 22px;
+            margin-bottom: 10px;
         }
 
         .date {
-            font-size: clamp(28px, 6vw, 46px);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(24px, 5vw, 34px);
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 35px;
+            letter-spacing: -0.5px;
+            color: var(--accent);
+            margin-bottom: 32px;
         }
 
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .time {
-            min-width: 90px;
-            padding: 15px 12px;
+            min-width: 82px;
+            padding: 14px 10px;
             border-radius: 10px;
             background: #191d22;
-            border: 1px solid #292f36;
+            border: 1px solid var(--border-soft);
         }
 
         .time strong {
             display: block;
-            font-size: 25px;
-            margin-bottom: 5px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
         .time span {
-            color: #777f88;
+            color: var(--muted-dim);
             font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .interest {
+            margin: 4px auto 34px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #111419;
+        }
+
+        .interest-count {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .interest-count strong {
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            margin-right: 4px;
+        }
+
+        .interest-button {
+            border: 0;
+            border-radius: 8px;
+            padding: 11px 20px;
+            background: var(--accent);
+            color: #07130e;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+
+        .interest-button:hover {
+            opacity: 0.9;
+        }
+
+        .interest-button:active {
+            transform: translateY(1px);
+        }
+
+        .interest-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.55;
+        }
+
+        .interest-status {
+            min-height: 18px;
+            margin-top: 10px;
+            color: var(--muted-dim);
+            font-size: 12px;
         }
 
         .footer {
-            color: #656d76;
+            color: var(--muted-dim);
             font-size: 13px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-soft);
+        }
+
+        .footer-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--muted-dim);
+            font-size: 13px;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.15s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        .footer-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
         }
 
         @media (max-width: 500px) {
             .container {
-                padding: 45px 22px;
+                padding: 40px 22px 34px;
             }
 
             .time {
-                min-width: 75px;
+                min-width: 72px;
             }
 
             .description {
@@ -130,9 +243,14 @@
 <body>
 
     <main class="container">
-        <div class="label">Something new is coming</div>
+        <div class="brand">
+            <span class="brand-mark"></span>
+            <h1>Stbale</h1>
+        </div>
 
-        <h1>Coming Soon</h1>
+        <p class="eyebrow">Something new is coming</p>
+
+        <h2 class="headline">Coming Soon</h2>
 
         <p class="description">
             We're working behind the scenes to bring you something new.
@@ -165,13 +283,226 @@
             </div>
         </div>
 
+        <section class="interest">
+            <p class="interest-count">
+                <strong id="interestCount">0</strong>
+                people are interested
+            </p>
+
+            <button class="interest-button" id="interestButton">
+                I'm Interested
+            </button>
+
+            <p class="interest-status" id="interestStatus"></p>
+        </section>
+
         <p class="footer">
             Mark your calendar. We'll see you on launch day.
         </p>
+
+        <a class="footer-link" href="/about">About us</a>
     </main>
 
     <script>
+        const SUPABASE_URL = "https://bvoxmhelzmiocuezlkse.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_Ltz3Pl6cafHK75nOIV1GOw_TY1lMGAF";
+
+        const PRODUCT_ID = 1;
+
         const launchDate = new Date("October 15, 2026 00:00:00").getTime();
+
+        const interestCount = document.getElementById("interestCount");
+        const interestButton = document.getElementById("interestButton");
+        const interestStatus = document.getElementById("interestStatus");
+
+        let currentUser = null;
+
+        async function supabaseRequest(path, options = {}) {
+            const headers = {
+                "apikey": SUPABASE_KEY,
+                "Content-Type": "application/json",
+                ...options.headers
+            };
+
+            return fetch(`${SUPABASE_URL}${path}`, {
+                ...options,
+                headers
+            });
+        }
+
+        async function createAnonymousUser() {
+            const existingSession = localStorage.getItem("stbale_supabase_session");
+
+            if (existingSession) {
+                try {
+                    const session = JSON.parse(existingSession);
+
+                    if (session.access_token && session.user) {
+                        currentUser = session.user;
+
+                        const response = await supabaseRequest("/auth/v1/user", {
+                            headers: {
+                                "Authorization": `Bearer ${session.access_token}`
+                            }
+                        });
+
+                        if (response.ok) {
+                            return session;
+                        }
+                    }
+                } catch (error) {
+                    localStorage.removeItem("stbale_supabase_session");
+                }
+            }
+
+            const response = await supabaseRequest("/auth/v1/signup", {
+                method: "POST",
+                body: JSON.stringify({})
+            });
+
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({}));
+                throw new Error(error.msg || error.message || "Unable to create anonymous user.");
+            }
+
+            const session = await response.json();
+
+            localStorage.setItem(
+                "stbale_supabase_session",
+                JSON.stringify(session)
+            );
+
+            currentUser = session.user;
+
+            return session;
+        }
+
+        async function loadInterestCount() {
+            try {
+                const response = await supabaseRequest(
+                    `/rest/v1/product_interests?product_id=eq.${PRODUCT_ID}&select=id`
+                );
+
+                if (!response.ok) {
+                    throw new Error("Unable to load interest count.");
+                }
+
+                const data = await response.json();
+
+                interestCount.textContent = data.length;
+            } catch (error) {
+                console.error(error);
+                interestCount.textContent = "—";
+            }
+        }
+
+        async function checkExistingInterest() {
+            if (!currentUser) {
+                return false;
+            }
+
+            const session = JSON.parse(
+                localStorage.getItem("stbale_supabase_session")
+            );
+
+            const response = await supabaseRequest(
+                `/rest/v1/product_interests?product_id=eq.${PRODUCT_ID}&user_id=eq.${currentUser.id}&select=id`,
+                {
+                    headers: {
+                        "Authorization": `Bearer ${session.access_token}`
+                    }
+                }
+            );
+
+            if (!response.ok) {
+                return false;
+            }
+
+            const data = await response.json();
+
+            return data.length > 0;
+        }
+
+        async function initializeInterest() {
+            try {
+                const session = await createAnonymousUser();
+
+                if (!session.access_token || !currentUser) {
+                    throw new Error("Anonymous authentication failed.");
+                }
+
+                const alreadyInterested = await checkExistingInterest();
+
+                if (alreadyInterested) {
+                    interestButton.disabled = true;
+                    interestButton.textContent = "You're Interested";
+                    interestStatus.textContent = "Thanks for your interest.";
+                }
+            } catch (error) {
+                console.error(error);
+                interestButton.disabled = true;
+                interestStatus.textContent =
+                    "Interest registration is currently unavailable.";
+            }
+        }
+
+        async function addInterest() {
+            if (!currentUser) {
+                return;
+            }
+
+            const session = JSON.parse(
+                localStorage.getItem("stbale_supabase_session")
+            );
+
+            interestButton.disabled = true;
+            interestButton.textContent = "Adding...";
+            interestStatus.textContent = "";
+
+            try {
+                const response = await supabaseRequest(
+                    "/rest/v1/product_interests",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${session.access_token}`,
+                            "Prefer": "return=minimal"
+                        },
+                        body: JSON.stringify({
+                            product_id: PRODUCT_ID,
+                            user_id: currentUser.id
+                        })
+                    }
+                );
+
+                if (response.status === 409) {
+                    interestButton.textContent = "You're Interested";
+                    interestStatus.textContent =
+                        "You've already shown interest.";
+                    return;
+                }
+
+                if (!response.ok) {
+                    const error = await response.json().catch(() => ({}));
+                    throw new Error(
+                        error.message || "Unable to register interest."
+                    );
+                }
+
+                interestButton.textContent = "You're Interested";
+                interestStatus.textContent =
+                    "Thanks for your interest.";
+
+                await loadInterestCount();
+            } catch (error) {
+                console.error(error);
+
+                interestButton.disabled = false;
+                interestButton.textContent = "I'm Interested";
+                interestStatus.textContent =
+                    "Something went wrong. Please try again.";
+            }
+        }
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -183,15 +514,20 @@
                 return;
             }
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const days = Math.floor(
+                difference / (1000 * 60 * 60 * 24)
+            );
+
             const hours = Math.floor(
                 (difference % (1000 * 60 * 60 * 24)) /
                 (1000 * 60 * 60)
             );
+
             const minutes = Math.floor(
                 (difference % (1000 * 60 * 60)) /
                 (1000 * 60)
             );
+
             const seconds = Math.floor(
                 (difference % (1000 * 60)) /
                 1000
@@ -203,9 +539,14 @@
             document.getElementById("seconds").textContent = seconds;
         }
 
+        interestButton.addEventListener("click", addInterest);
+
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        loadInterestCount();
+        initializeInterest();
     </script>
 
 </body>
-  </html>
+</html>

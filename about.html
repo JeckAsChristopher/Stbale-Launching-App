@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stbale — About Us</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0c0e11;
+            --panel: #13161b;
+            --border: #242a31;
+            --border-soft: #1b2026;
+            --text: #f4f5f6;
+            --muted: #939aa3;
+            --muted-dim: #6b7279;
+            --accent: #35c48d;
+            --accent-dim: rgba(53, 196, 141, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 24px;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(ellipse 900px 500px at 50% -10%, var(--accent-dim), transparent 60%),
+                var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 720px;
+            padding: 40px 0 60px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 48px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 9px;
+            height: 9px;
+            border-radius: 3px;
+            background: var(--accent);
+        }
+
+        .brand span.brand-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: var(--text);
+        }
+
+        .back-link {
+            color: var(--muted);
+            font-size: 14px;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+            border-color: var(--muted-dim);
+        }
+
+        .back-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--panel);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            padding: 44px 38px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 6vw, 44px);
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        h3.section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .intro {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 36px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 62ch;
+        }
+
+        @media (max-width: 560px) {
+            .card {
+                padding: 32px 22px;
+            }
+
+            .topbar {
+                margin-bottom: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="topbar">
+            <a class="brand" href="/">
+                <span class="brand-mark"></span>
+                <span class="brand-name">Stbale</span>
+            </a>
+            <a class="back-link" href="/">← Back to home</a>
+        </div>
+
+        <main class="card">
+            <h1>About Us</h1>
+
+            <h3 class="section-label">Description</h3>
+            <p class="intro"><b>Stbale is a website selling platform to sell and retail websites.</b></p>
+
+            <section>
+                <h2>What Stbale is</h2>
+                <p>
+                    Stbale is a marketplace built for buying and selling websites. It connects
+                    people who build and own websites with people who are looking to acquire
+                    one, giving both sides a single place to list, browse, and complete a sale.
+                </p>
+            </section>
+
+            <section>
+                <h2>What you can do on Stbale</h2>
+                <p>
+                    Sellers can create a listing for a website they own, describe what it does,
+                    and set it up for sale. Buyers can browse available listings, review the
+                    details of a website, and reach out to purchase the ones that fit what
+                    they're looking for.
+                </p>
+            </section>
+
+            <section>
+                <h2>For developers and creators</h2>
+                <p>
+                    Developers and creators who have built websites, tools, or small products
+                    can use Stbale to find buyers for their work. Instead of a project sitting
+                    unused, it can be listed on the platform and handed off to someone who wants
+                    to run it, maintain it, or build on top of it.
+                </p>
+            </section>
+
+            <section>
+                <h2>For buyers</h2>
+                <p>
+                    Buyers can use Stbale to discover websites that are available for purchase,
+                    look through what each one offers, and buy a site that matches what they
+                    need — whether that's an existing project to take over or a foundation to
+                    build something new on.
+                </p>
+            </section>
+
+            <section>
+                <h2>Our goal</h2>
+                <p>
+                    Stbale's goal is to make buying and selling websites straightforward, by
+                    giving developers, creators, and buyers a shared marketplace to connect and
+                    do business.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
